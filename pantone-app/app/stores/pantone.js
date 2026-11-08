@@ -69,7 +69,7 @@ export const usePantoneStore = defineStore('pantone', {
         const res = await fetch('/api/inventory')
         if (res.ok) {
           const data = await res.json()
-          if (Array.isArray(data) && data.length > 0) {
+          if (Array.isArray(data)) {
             this.inventory = data
           }
         }
@@ -227,11 +227,14 @@ export const usePantoneStore = defineStore('pantone', {
       }
 
       try {
-        await fetch('/api/inventory', {
+        const response = await fetch('/api/inventory', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(this.inventory),
         })
+        if (!response.ok) {
+          throw new Error(`Inventory save failed (${response.status})`)
+        }
       } catch (e) {
         console.warn('Could not persist inventory to server disk:', e)
       }

@@ -12,11 +12,24 @@ export default defineEventHandler(async (event) => {
     })
   }
 
+  if (body.some((item) => item === null || typeof item !== 'object' || Array.isArray(item))) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: 'Each inventory item must be an object',
+    })
+  }
+
   try {
-    await fs.writeFile(filePath, JSON.stringify(body, null, 2), 'utf-8')
+    const tempPath = `${filePath}.tmp`
+    await fs.writeFile(tempPath, `${JSON.stringify(body, null, 2)}\n`, 'utf-8')
+    await fs.rename(tempPath, filePath)
     return { success: true, count: body.length }
   } catch (err) {
     console.error('Error writing pantone-inventory.json:', err)
-    return { success: true, count: body.length }
+    throw createError({
+      statusCode: 500,
+      statusMessage: 'Could not save inventory data',
+      cause: err,
+    })
   }
 })

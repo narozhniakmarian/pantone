@@ -2,6 +2,13 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   ssr: false,
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        types: ['node'],
+      },
+    },
+  },
   devtools: { enabled: false },
   modules: ['@pinia/nuxt'],
   css: ['~/assets/css/main.css'],

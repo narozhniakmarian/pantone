@@ -8,6 +8,10 @@ export default defineEventHandler(async () => {
     return JSON.parse(data)
   } catch (err) {
     console.error('Error reading pantone-inventory.json:', err)
-    return []
+    throw createError({
+      statusCode: 500,
+      statusMessage: 'Could not read inventory data',
+      cause: err,
+    })
   }
 })
