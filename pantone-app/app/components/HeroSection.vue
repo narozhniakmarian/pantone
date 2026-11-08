@@ -100,6 +100,12 @@
         </button>
       </nav>
     </div>
+
+    <footer class="hero__footer">
+      <a href="https://nm-dev.online/pl" target="_blank" rel="noopener noreferrer">
+        Stworzone przez NM.dev
+      </a>
+    </footer>
   </section>
 </template>
 
@@ -302,6 +308,29 @@ const handleOpenInventory = () => {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+
+.hero__footer {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 2;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.hero__footer a {
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.hero__footer a:hover,
+.hero__footer a:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .hero__header {
