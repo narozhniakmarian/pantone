@@ -1,0 +1,46 @@
+[
+  {
+    "id": "sample-001",
+    "pantoneCode": "208 C",
+    "sampleYear": 2016,
+    "rackNumber": 1,
+    "shelfNumber": 3,
+    "status": "AVAILABLE",
+    "machine": null,
+    "notes": null,
+    "createdAt": "2024-01-15T10:00:00.000Z"
+  },
+  {
+    "id": "sample-002",
+    "pantoneCode": "208 C",
+    "sampleYear": 2019,
+    "rackNumber": 2,
+    "shelfNumber": 1,
+    "status": "IN_USE",
+    "machine": "Heidelberg CD-102",
+    "notes": null,
+    "createdAt": "2024-01-15T10:00:00.000Z"
+  },
+  {
+    "id": "sample-003",
+    "pantoneCode": "186 C",
+    "sampleYear": 2019,
+    "rackNumber": 1,
+    "shelfNumber": 2,
+    "status": "AVAILABLE",
+    "machine": null,
+    "notes": "Dobry stan",
+    "createdAt": "2024-02-01T08:00:00.000Z"
+  },
+  {
+    "id": "sample-004",
+    "pantoneCode": "485 C",
+    "sampleYear": 2016,
+    "rackNumber": 3,
+    "shelfNumber": 1,
+    "status": "AVAILABLE",
+    "machine": null,
+    "notes": null,
+    "createdAt": "2024-02-10T09:00:00.000Z"
+  }
+]

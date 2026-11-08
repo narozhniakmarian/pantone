@@ -1,0 +1,10 @@
+{
+  "name": "pantone-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix pantone-app run dev",
+    "build": "npm --prefix pantone-app run build",
+    "start": "npm --prefix pantone-app run start"
+  }
+}
